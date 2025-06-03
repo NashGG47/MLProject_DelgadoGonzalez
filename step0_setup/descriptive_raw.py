@@ -76,4 +76,4 @@ plt.suptitle("")  # remove overall title for article style
 plt.tight_layout()
 plt.savefig(OUT_DIR / "centrality_raw_box.png", dpi=500)
 plt.close()
-print("✓ centrality_raw_box.png")
+print(" centrality_raw_box.png")

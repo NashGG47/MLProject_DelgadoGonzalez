@@ -27,11 +27,11 @@ for split in ["train", "test"]:
 
     graphs = []
     for sent_id, row in df.iterrows():
-        G = parse_graph(row[edge_col])            # randomize + grafo ND
+        G = parse_graph(row[edge_col])            # randomize + graph ND
         G.graph["sentence_id"] = sent_id
         graphs.append(G)
 
     with open(OUT / f"{split}_graphs.pkl", "wb") as f:
         pickle.dump(graphs, f)
 
-    print(f"{split}: {len(graphs)} grafos guardados → sin fuga.")
+    print(f"{split}: {len(graphs)} graphs saved.")

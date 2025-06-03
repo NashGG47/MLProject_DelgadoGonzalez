@@ -43,7 +43,7 @@ TEMPLATES = {
 
 HEADER = """\
 \"\"\"{comment}
-🏗️  Plantilla autogenerada. Rellena con la lógica del paso.
+ Auto-generated template. Fill in the step logic.
 \"\"\"\n"""
 
 # ---------- CREATE FOLDERS -------------------------------------------
