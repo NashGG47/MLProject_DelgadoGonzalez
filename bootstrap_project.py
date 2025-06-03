@@ -2,11 +2,8 @@
 """
 bootstrap_project.py
 -------------------------------------------------
-Crea la estructura completa de carpetas y scripts
-plantilla (vacíos) para el proyecto Root-Detection
-con TODAS las tareas acordadas.
-
-Ejecución:
+Create the complete folder structure and (empty) template scripts for the Root-Detection project, including ALL agreed-upon tasks.
+-------------------------------------------------
     python bootstrap_project.py
 """
 
@@ -14,7 +11,7 @@ import pathlib, textwrap
 
 ROOT = pathlib.Path(__file__).resolve().parent
 
-# ---------- carpetas -------------------------------------------------
+# ---------- PATHS -------------------------------------------------
 DIRS = [
     "data",
     "common",
@@ -28,7 +25,7 @@ DIRS = [
     "step7_inference",
 ]
 
-# ---------- scripts vacíos -------------------------------------------
+# ---------- EMPTY scripts  -------------------------------------------
 TEMPLATES = {
     "common/io_utils.py":                    "Utilidades de I/O y randomización",
     "step0_setup/descriptive_raw.py":        "Estadística descriptiva de datos crudos",
@@ -49,16 +46,16 @@ HEADER = """\
 🏗️  Plantilla autogenerada. Rellena con la lógica del paso.
 \"\"\"\n"""
 
-# ---------- crear carpetas -------------------------------------------
+# ---------- CREATE FOLDERS -------------------------------------------
 for d in DIRS:
     (ROOT / d).mkdir(parents=True, exist_ok=True)
 
-# ---------- crear scripts plantilla ----------------------------------
+# ---------- Create scripts templates ----------------------------------
 for path, comment in TEMPLATES.items():
     file_path = ROOT / path
     if not file_path.exists():
         file_path.write_text(textwrap.dedent(HEADER.format(comment=comment)), encoding="utf-8")
         print("✓ creado", file_path.relative_to(ROOT))
 
-print("\n✅ Estructura y scripts plantilla listos.")
-print("   Copia train.csv y test.csv en /data y rellena cada script paso a paso.")
+print("\n scripts ready.")
+print("   Copy train.csv and test.csv on /data and fill each script.")

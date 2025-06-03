@@ -1,15 +1,15 @@
-"""Randomización + grafos ND
-🏗️  Plantilla autogenerada. Rellena con la lógica del paso.
-"""
-"""
+"""Randomization + ND graphs
+Auto-generated template. Fill in with the step logic.
+""
+""
 step1_preprocess/build_graphs.py
----------------------------------------------------
-• Lee train.csv / test.csv
-• Aplica randomización anti-fuga y crea grafos NO dirigidos
-• Guarda pickles  train_graphs.pkl  y  test_graphs.pkl
+--------------------------------------------------
+• Read train.csv / test.csv
+• Apply anti-leakage randomization and create undirected graphs
+• Save pickles train_graphs.pkl and test_graphs.pkl
 """
 
-# --- 2 líneas mágicas de ruta ---------------------------------
+# --- Paths ---------------------------------
 import sys, pathlib
 sys.path.append(str(pathlib.Path(__file__).resolve().parents[1]))
 # ---------------------------------------------------------------
@@ -27,7 +27,7 @@ for split in ["train", "test"]:
 
     graphs = []
     for sent_id, row in df.iterrows():
-        G = parse_graph(row[edge_col])            # aleatoriza + grafo ND
+        G = parse_graph(row[edge_col])            # randomize + grafo ND
         G.graph["sentence_id"] = sent_id
         graphs.append(G)
 

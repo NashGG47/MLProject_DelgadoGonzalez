@@ -1,16 +1,16 @@
-"""Error analysis with OOF predictions – article style
+"""Error analysis with OOF predictions - article style
 step6_validation/error_analysis.py
 -------------------------------------------------
 For each model present in *train_oof_predictions.csv* (those that have a
 threshold in *thresholds.pkl*) this script outputs:
-  • confusion_matrix_<model>.png      – heat‑map, no title
-  • score_distribution_<model>.png    – histograms by class, threshold marked
+  • confusion_matrix_<model>.png      - heat-map, no title
+  • score_distribution_<model>.png    - histograms by class, threshold marked
 Additionally, for the best model (first in `thresholds.pkl`):
-  • error_cases.csv                   – 20 sentences with highest error rate
-  • f1_vs_size.png                    – F1 vs average degree
-  • accuracy_vs_size.png              – Precision vs average degree
-  • error_heatmap_top20.png           – Top‑20 sentences by error rate
-All figures at 500 dpi, no embedded titles. Compatible with pandas ≤ 2.x
+  • error_cases.csv                   - 20 sentences with highest error rate
+  • f1_vs_size.png                    - F1 vs average degree
+  • accuracy_vs_size.png              - Precision vs average degree
+  • error_heatmap_top20.png           - Top-20 sentences by error rate
+All figures at 500-dpi, no embedded titles. Compatible with pandas ≤-2.x
 """
 
 # --- path setup ----------------------------------------------------
@@ -83,4 +83,4 @@ for m_idx, (model_name, thr) in enumerate(THR.items(), start=1):
         plt.xlabel("sentence_id"); plt.yticks([])
         plt.tight_layout(); plt.savefig(OUT_DIR / "error_heatmap_top20.png", dpi=500); plt.close()
 
-print("✓ Error analysis completed for models:", ", ".join(THR.keys()))
+print(" Error analysis completed for models:", ", ".join(THR.keys()))

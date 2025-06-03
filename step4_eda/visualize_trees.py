@@ -1,10 +1,10 @@
-"""Tree visualisation – article-ready (panel labels A/B, no embedded titles)
+"""Tree visualisation - article-ready (panel labels A/B, no embedded titles)
 step4_eda/visualize_trees.py
 -------------------------------------------------
-Creates a two‑panel PNG for a given sentence:
+Creates a two-panel PNG for a given sentence:
   • Panel A = unrooted graph (IDs permuted)
   • Panel B = same graph with root highlighted in red
-Figures saved at 500 dpi. Captions belong to the manuscript.
+Figures saved at 500-dpi. Captions belong to the manuscript.
 Usage:
     python step4_eda/visualize_trees.py 62 ar   # sentence 62, language 'ar'
 If arguments are omitted, defaults to sentence 0.
@@ -66,4 +66,4 @@ OUT_DIR = ROOT / "step4_eda" / "trees"; OUT_DIR.mkdir(exist_ok=True)
 outfile = OUT_DIR / f"tree_sent{args.sentence_id}.png"
 plt.savefig(outfile, dpi=500)
 plt.close()
-print("✓ saved", outfile)
+print(" saved", outfile)

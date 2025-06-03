@@ -1,20 +1,20 @@
 """Descriptive statistics of raw data
-🏗️ Auto-generated template – English, article-ready (no embedded figure titles).
+ Auto-generated template – English, article-ready (no embedded figure titles).
 
 step0_setup/descriptive_raw.py
 ---------------------------------
-Generates:
-  • raw_stats.csv          – basic statistics
-  • lang_counts.png        – # sentences per language
-  • tree_size_hist.png     – histogram of tree size
-  • centrality_raw_box.png – preliminary box‑plots of 4 centralities
-Run from project root:
-    python step0_setup/descriptive_raw.py
+Generates: 
+• raw_stats.csv – basic statistics 
+• lang_counts.png – # sentences per language 
+• tree_size_hist.png – histogram of tree size 
+• centrality_raw_box.png – preliminary box‑plots of 4 centralities
+Run from project root: 
+python step0_setup/descriptive_raw.py
 """
 
 import pathlib, ast, pandas as pd, matplotlib.pyplot as plt, networkx as nx
 
-ROOT = pathlib.Path(__file__).resolve().parents[1]   # ← ahora sí
+ROOT = pathlib.Path(__file__).resolve().parents[1]   # project root
 DATA_DIR = ROOT / "data"
 OUT_DIR  = ROOT / "step0_setup"; OUT_DIR.mkdir(exist_ok=True)
 

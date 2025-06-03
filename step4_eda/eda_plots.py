@@ -1,4 +1,4 @@
-"""EDA figures – article style (percentages shown where appropriate)
+"""EDA figures - article style (percentages shown where appropriate)
 step4_eda/eda_plots.py
 ---------------------------------
 Generates:
@@ -62,4 +62,4 @@ sns.heatmap(corr, annot=True, cmap="coolwarm", vmin=-1, vmax=1, fmt=".2f", cbar_
 plt.tight_layout()
 plt.savefig(OUT / "corr_heatmap.png", dpi=500)
 plt.close()
-print("✓ corr_heatmap.png saved at 500 dpi")
+print(" corr_heatmap.png saved at 500 dpi")

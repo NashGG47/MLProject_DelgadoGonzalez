@@ -1,26 +1,26 @@
 """
-Entrenamiento de múltiples modelos
-📽️  Plantilla autogenerada corregida con predicciones OOF explícitas.
+Multi-model training
+Auto-generated template corrected with explicit OOF predictions.
 """
 """
 step5_modeling/train_models.py
 ------------------------------------------------------------------
-• Ejecuta GridSearchCV con GroupKFold (15 folds) sobre 8 modelos clásicos.
-• Utiliza la métrica F1 como scoring principal en la validación cruzada.
-• Calcula predicciones out-of-fold para estimar de forma honesta:
-    - F1-score
-    - Balanced Accuracy
-    - Precision
-    - Recall
-    - Matthews Correlation Coefficient (MCC)
-    - Área bajo la curva precision-recall (PR-AUC)
-• Estima el umbral óptimo (max-F1) usando la curva precision-recall.
-• Guarda los resultados de validación cruzada en cv_results.csv.
-• Exporta los 2 mejores modelos (según F1) + sus umbrales óptimos.
-• Adicionalmente guarda TODOS los modelos, TODOS los umbrales y predicciones OOF.
+• Runs GridSearchCV with GroupKFold (15 folds) on 8 classical models.
+• Uses the F1 metric as the primary score in cross-validation.
+• Calculates out-of-fold predictions to honestly estimate:
+- F1 score
+- Balanced Accuracy
+- Precision
+- Recall
+- Matthews Correlation Coefficient (MCC)
+- Area under the precision-recall curve (PR-AUC)
+• Estimates the optimal threshold (max-F1) using the precision-recall curve.
+• Saves cross-validation results to cv_results.csv.
+• Exports the top 2 models (based on F1) + their optimal thresholds.
+• Additionally, saves ALL models, ALL thresholds, and predictions OOF.
 """
 
-# ---------------------- Entrenamiento ----------------------
+# ---------------------- Training ----------------------
 
 import sys, pathlib, warnings
 sys.path.append(str(pathlib.Path(__file__).resolve().parents[1]))

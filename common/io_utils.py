@@ -1,33 +1,32 @@
-"""Utilidades de I/O y randomización
-🏗️  Plantilla autogenerada. Rellena con la lógica del paso.
-"""
-"""
+"""I/O Utilities and Randomization
+Auto-generated template. Fill in the step logic.
+
 common/io_utils.py
 ---------------------------------------------------
-Utilidades de entrada-salida compartidas
-• detect_columns(df)   → detecta 'edgelist*' y 'root'
-• parse_graph(str)     → randomiza lista y pares, devuelve nx.Graph
+Shared Input-Output Utilities
+• detect_columns(df) → detects 'edgelist*' and 'root'
+• parse_graph(str) → randomizes list and pairs, returns nx.Graph
 """
 
 import ast, random, numpy as np, networkx as nx
 
-RANDOM_STATE = 42  # reproducibilidad global
+RANDOM_STATE = 42  # global reproducibility
 random.seed(RANDOM_STATE)
 np.random.seed(RANDOM_STATE)
 
-# ---------- detección flexible de columnas --------------------
+# ---------- flexible column detection --------------------
 def detect_columns(df):
     edge_col = next(c for c in df.columns if c.startswith("edgelist"))
     root_col = "root" if "root" in df.columns else None
     return edge_col, root_col
 
-# ---------- randomización + construcción de grafo -------------
+# ---------- randomization + graph construction -------------
 def parse_graph(row_edges, shuffle=True, flip_prob=0.5):
     """
-    1. Convierte la cadena '[ (a,b), ... ]' → lista de tuplas
-    2. Baraja la lista (anti-fuga A-1)
-    3. Con prob flip_prob invierte cada par (a,b)→(b,a) (A-2)
-    4. Devuelve nx.Graph()  NO dirigido   (G3)
+    1. Convert the string '[ (a,b), ... ]' → list of tuples
+    2. Shuffle the list (A-1 anti-leakage)
+    3. Flip each pair (a,b) → (b,a) with prob flip_prob (A-2)
+    4. Return an undirected nx.Graph() (G3)
     """
     edges = list(ast.literal_eval(row_edges))
 

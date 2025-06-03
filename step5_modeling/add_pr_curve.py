@@ -1,6 +1,6 @@
 """
-Curva PR y threshold-vs-F1
-🏗️ Adaptado para usar predicciones honestas (OOF).
+PR curve and threshold-vs-F1
+Adapted to use honest predictions (OOF).
 """
 
 import sys, pathlib, joblib, matplotlib.pyplot as plt, numpy as np, pandas as pd
@@ -43,4 +43,4 @@ for col in OOF_DATA.columns:
     plt.savefig(ROOT / "step5_modeling" / f"thr_vs_f1_{model_name}.png")
     plt.close()
 
-print("✓ PR y thr-F1 curvas generadas para modelos con predicciones OOF.")
+print(" PR and thr-F1 curves generated for models with OOF predictions.")
