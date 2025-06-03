@@ -142,8 +142,8 @@ python run_all.py
 
 * **Global seed**: 42
 * **Thresholds**: stored in `all_thresholds.pkl`
-* Training ≈ 4 h on an 8-thread CPU
-* Suppress warnings with:
+* **Training ≈** 4 h on an 8-thread CPU
+* **Suppress warnings with:**
 
 ```python
 import warnings
