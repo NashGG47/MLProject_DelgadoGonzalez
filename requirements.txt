@@ -1,0 +1,22 @@
+# Core data & numeric
+pandas>=2.0
+numpy>=1.22
+scipy>=1.11          # requerido por varios estimadores de scikit-learn
+
+# Graphs & centralities
+networkx>=3.0
+
+# Machine-Learning (todos los modelos de la clase)
+scikit-learn>=1.4
+joblib>=1.3          # serializar modelos y listas de columnas
+
+# Visualización
+matplotlib>=3.8
+seaborn>=0.13        # opcional, solo para heat-map y gráficos estéticos
+
+# Utilidades
+tqdm>=4.66           # barras de progreso
+
+# (Opcional) Dibujo de árboles con Graphviz
+#pygraphviz==1.11     # necesita 'graphviz' instalado en el SO
+graphviz>=0.20.1     # interfaz Python pura, alternativa ligera
