@@ -44,7 +44,7 @@ pip install -r requirements.txt
 ## 2. Minimum Project Structure
 
 ```
-Nashly/
+MLProject_DelgadoGonzalez/
 ├─bootstrap_project.py
 ├─run_all.py
 ├─requirements.txt
